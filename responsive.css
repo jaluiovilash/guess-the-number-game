@@ -1,0 +1,46 @@
+@media (max-width: 390px) {
+    body {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size: 0.7rem;
+    }
+
+    .wrapper {
+        max-width: 85vw;
+        display: grid;
+        row-gap: 10px;
+    }
+
+    .form input{
+        margin: 5px 0;
+    }
+
+    .guessField{
+        width: 200px;
+        height: 15px;
+        border-radius: 4px;
+        border: 2px solid black;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    nav{
+        padding: 13px;
+    }
+
+    .wrapper {
+        width: 100vw;
+        display: grid;
+        row-gap: 20px;
+    }
+    .form input{
+        margin: 5px 0;
+    }
+}
