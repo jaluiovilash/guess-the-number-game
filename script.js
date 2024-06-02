@@ -1,6 +1,7 @@
 console.log("The game has started");
+
 const randomNum = parseInt(Math.random() * 100 + 1);
-console.log(randomNum);
+// console.log(randomNum);
 
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessField');
@@ -9,16 +10,18 @@ const remaining = document.querySelector('.lastResult');
 const lowOrHigh = document.querySelector('.lowOrHigh');
 const startOver = document.querySelector('.resultParas');
 
-const p = document.createElement('p');
+const para = document.createElement('p');
 
 let prevGuess = [];
 let numGuess = 1;
 
-let playGame = true
 
+let playGame = true;
 if (playGame) {
     submit.addEventListener('click', (e) => {
         e.preventDefault();
+
+        // guess intializing - the number entered by the gamer.
         const guess = parseInt(userInput.value);
         console.log(guess);
         validateGame(guess);
@@ -29,9 +32,9 @@ function validateGame(guess) {
     if (isNaN(guess)) {
         alert('Please enter a valid number.');
     } else if (guess < 1) {
-        alert('Please enter a valid number more than 1.');
+        alert('Please enter a valid number: more than 1.');
     } else if (guess > 100) {
-        alert('Please enter a valid number less than 100.');
+        alert('Please enter a valid number: less than 100.');
     } else {
         prevGuess.push(guess);
         if (numGuess === 11) {
@@ -56,7 +59,7 @@ function checkGuess(guess) {
     }
 }
 
-// clean up method to clean the submit box and add to the previous guess list
+// clean up method to clean the submit box and add the previous number to the guess list.
 function displayGuess(guess) {
     userInput.value = '';
     guessSlot.innerHTML += `${guess}  `;
@@ -71,8 +74,8 @@ function displayMessage(message) {
 function endGame() {
     userInput.value = '';
     userInput.setAttribute('disabled', '');
-    p.classList.add('button');
-    p.innerHTML = `<h2 id="newGame">Start new game</h2>`;
+    para.classList.add('button');
+    para.innerHTML = `<h2 id="newGame">Start new game</h2>`;
     startOver.appendChild(p);
     playGame = false;
     newGame();
